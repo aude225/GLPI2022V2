@@ -1,0 +1,27 @@
+[2022-05-03 12:05:02] glpisqllog.ERROR: DBmysql::query() in C:\xampp\htdocs\glpi\src\DBmysql.php line 367
+  *** MySQL query error:
+  SQL: INSERT INTO `glpi_tickets_users` (`users_id`, `type`, `tickets_id`, `alternative_email`) VALUES ('5', '1', '2', '')
+  Error: Duplicate entry '2-1-5-' for key 'unicity'
+  Backtrace :
+  src\DBmysql.php:1295                               
+  src\CommonDBTM.php:657                             DBmysql->insert()
+  src\CommonDBTM.php:1249                            CommonDBTM->addToDB()
+  src\CommonITILObject.php:2294                      CommonDBTM->add()
+  src\Ticket.php:2130                                CommonITILObject->post_addItem()
+  src\CommonDBTM.php:1250                            Ticket->post_addItem()
+  front\ticket.form.php:72                           CommonDBTM->add()
+  {"user":"5@DESKTOP-N8DR5OG"} 
+[2022-08-29 13:38:20] glpisqllog.ERROR: DBmysql::query() in C:\xampp\htdocs\glpi\src\DBmysql.php line 367
+  *** MySQL query error:
+  SQL: SELECT `glpi_knowbaseitems`.*, `glpi_knowbaseitems_knowbaseitemcategories`.`knowbaseitemcategories_id`, GROUP_CONCAT(DISTINCT `glpi_knowbaseitemcategories`.`completename`) AS category, COUNT(`glpi_knowbaseitems_users`.`id`) + COUNT(`glpi_groups_knowbaseitems`.`id`) + COUNT(`glpi_knowbaseitems_profiles`.`id`) + COUNT(`glpi_entities_knowbaseitems`.`id`) AS `visibility_count`, (MATCH(`glpi_knowbaseitems`.`name`, `glpi_knowbaseitems`.`answer`)
+                           AGAINST('qu* est* ce* que* la* signature* éléctronique*' IN BOOLEAN MODE) ) AS SCORE  FROM `glpi_knowbaseitems` LEFT JOIN `glpi_knowbaseitems_users` ON (`glpi_knowbaseitems_users`.`knowbaseitems_id` = `glpi_knowbaseitems`.`id`) LEFT JOIN `glpi_groups_knowbaseitems` ON (`glpi_groups_knowbaseitems`.`knowbaseitems_id` = `glpi_knowbaseitems`.`id`) LEFT JOIN `glpi_knowbaseitems_profiles` ON (`glpi_knowbaseitems_profiles`.`knowbaseitems_id` = `glpi_knowbaseitems`.`id`) LEFT JOIN `glpi_entities_knowbaseitems` ON (`glpi_entities_knowbaseitems`.`knowbaseitems_id` = `glpi_knowbaseitems`.`id`) LEFT JOIN `glpi_knowbaseitems_knowbaseitemcategories` ON (`glpi_knowbaseitems_knowbaseitemcategories`.`knowbaseitems_id` = `glpi_knowbaseitems`.`id`) LEFT JOIN `glpi_knowbaseitemcategories` ON (`glpi_knowbaseitemcategories`.`id` = `glpi_knowbaseitems_knowbaseitemcategories`.`knowbaseitemcategories_id`) WHERE (`glpi_knowbaseitems`.`users_id` = '7' OR `glpi_knowbaseitems_users`.`users_id` = '7' OR `glpi_knowbaseitems`.`is_faq` = '1' OR (`glpi_groups_knowbaseitems`.`groups_id` IN ('-1') AND (`glpi_groups_knowbaseitems`.`no_entity_restriction` = '1' OR (`glpi_groups_knowbaseitems`.`entities_id` IN ('0')))) OR (`glpi_knowbaseitems_profiles`.`profiles_id` = '1' AND (`glpi_knowbaseitems_profiles`.`no_entity_restriction` = '1' OR ((`glpi_knowbaseitems_profiles`.`entities_id` IN ('0'))))) OR (`glpi_entities_knowbaseitems`.`entities_id` IN ('0'))) AND ((`glpi_knowbaseitems`.`is_faq` = '1' OR `glpi_knowbaseitems_users`.`users_id` = '7')) AND (((`glpi_knowbaseitems`.`name` LIKE '%qu'est ce que la signature éléctronique%') OR (`glpi_knowbaseitems`.`answer` LIKE '%qu'est ce que la signature éléctronique%'))) AND ((((`glpi_knowbaseitems`.`begin_date` IS NULL) OR (`glpi_knowbaseitems`.`begin_date` < NOW()))) AND (((`glpi_knowbaseitems`.`end_date` IS NULL) OR (`glpi_knowbaseitems`.`end_date` > NOW())))) GROUP BY `glpi_knowbaseitems`.`id` ORDER BY `SCORE` DESC
+  Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'est ce que la signature éléctronique%') OR (`glpi_knowbaseitems`.`answer` L...' at line 2
+  Backtrace :
+  src\DBmysqlIterator.php:108                        
+  src\DBmysql.php:1039                               DBmysqlIterator->execute()
+  src\KnowbaseItem.php:1649                          DBmysql->request()
+  src\Knowbase.php:137                               KnowbaseItem::showList()
+  src\Knowbase.php:82                                Knowbase::showSearchView()
+  src\CommonGLPI.php:687                             Knowbase::displayTabContentForItem()
+  ajax\common.tabs.php:107                           CommonGLPI::displayStandardTab()
+  {"user":"7@DESKTOP-N8DR5OG"} 

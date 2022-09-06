@@ -1,0 +1,75 @@
+0
+f5a05ff8f64dfcbd0ae5fd5cf3b6da995aaf9c42
+s:4126:".dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c {
+  /*!
+ * ---------------------------------------------------------------------
+ * GLPI - Gestionnaire Libre de Parc Informatique
+ * Copyright (C) 2015-2022 Teclib' and contributors.
+ *
+ * http://glpi-project.org
+ *
+ * based on GLPI - Gestionnaire Libre de Parc Informatique
+ * Copyright (C) 2003-2014 by the INDEPNET Development Team.
+ *
+ * ---------------------------------------------------------------------
+ *
+ * LICENSE
+ *
+ * This file is part of GLPI.
+ *
+ * GLPI is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * GLPI is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with GLPI. If not, see <http://www.gnu.org/licenses/>.
+ * ---------------------------------------------------------------------
+ */
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-point, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-line, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-bar, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-slice-donut {
+  stroke: #66cc33;
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-bar + .ct-barlabel {
+  fill: setcolor(#66cc33);
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-circle {
+  fill: #66cc33;
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-circle + .ct-label {
+  fill: #66cc33;
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-slice-pie, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-area, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-a .ct-slice-donut-solid {
+  fill: #66cc33;
+  stroke: setcolor(#66cc33);
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-0:before {
+  background-color: #66cc33;
+  border-color: #66cc33;
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-point, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-line, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-bar, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-slice-donut {
+  stroke: #c4e6b3;
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-bar + .ct-barlabel {
+  fill: setcolor(#c4e6b3);
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-circle {
+  fill: #c4e6b3;
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-circle + .ct-label {
+  fill: #c4e6b3;
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-slice-pie, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-area, .dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-b .ct-slice-donut-solid {
+  fill: #c4e6b3;
+  stroke: setcolor(#c4e6b3);
+}
+.dashboard #chart-dashboard_card_assistance_c408a1568040718b53e323b38bcd83a073339e5c .ct-series-1:before {
+  background-color: #c4e6b3;
+  border-color: #c4e6b3;
+}
+";

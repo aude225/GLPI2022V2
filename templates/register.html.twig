@@ -1,0 +1,134 @@
+{#
+ # ---------------------------------------------------------------------
+ # GLPI - Gestionnaire Libre de Parc Informatique
+ # Copyright (C) 2015-2022 Teclib' and contributors.
+ #
+ # http://glpi-project.org
+ #
+ # based on GLPI - Gestionnaire Libre de Parc Informatique
+ # Copyright (C) 2003-2014 by the INDEPNET Development Team.
+ #
+ # ---------------------------------------------------------------------
+ #
+ # LICENSE
+ #
+ # This file is part of GLPI.
+ #
+ # GLPI is free software; you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation; either version 2 of the License, or
+ # (at your option) any later version.
+ #
+ # GLPI is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with GLPI. If not, see <http://www.gnu.org/licenses/>.
+ # ---------------------------------------------------------------------
+ #}
+ 
+{% extends 'layout/page_card_notlogged.html.twig' %}
+
+{% block css_block %}
+  <style>
+    body {
+        overflow: hidden;
+    background: url("pics/Presentation-et-missions-de-lARTCI-Autorite-de-protection.jpg") no-repeat;
+        background-size: cover !important;
+    
+  }
+  .mt-4 {
+    margin-top: 0rem !important; 
+}
+  </style>
+{% endblock %}
+
+{% block content_block %}
+   
+   <div class="container-fluid" style="max-width: 60rem">
+      <div class="card card-md">
+         <div class="card-body">
+            <form action="{{path('front/registre.php')}}" method="post" autocomplete="off"  data-submit-once>
+               <input type="hidden" name="noAUTO" value="{{ noAuto }}" />
+               <input type="hidden" name="redirect" value="{{ redirect }}" />
+               <input type="hidden" name="_glpi_csrf_token" value="{{ csrf_token() }}" />
+                <div class="row justify-content-center">
+                   <div class="col-md-5">
+                       <h2 class="card-header text-center mb-4" style="font-size:25px;background:white">Créer votre compte</h2>
+                        <div class="">
+                            <label class="form-label">Nom et prénoms</label>
+                            <input class="form-control" type="text" name="{{ nomfield }}" placeholder="Entrez votre nom" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">E-mail</label>
+                            <input class="form-control" type="text" name="{{ emailfield }}" placeholder="Entrez votre e-mail" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Entreprise</label>
+                            <input class="form-control" type="text" name="{{ entreprisefield }}" placeholder="Entrez le nom de votre entreprise" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Login</label>
+                            <input class="form-control" type="text" name="{{ loginfield }}" placeholder="Entrez votre login" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mot de passe</label>
+                            <input class="form-control" type="text" name="{{ passwordfield }}" placeholder="Entrez votre mot de passe" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mot de passe</label>
+                            <input class="form-control" type="text" name="{{ passwordfield }}" placeholder="Confirmez votre mot de passe" />
+                        </div>
+                        <div class="form-footer mt-2" style="margin-top:-0.0rem;" > 
+                            <button style="background:#fec95c !important;border:#fec95c;" type="submit" name="submit" class="btn btn-primary w-100" tabindex="3">
+                                {{ __('s\'enregistrer') }}
+                            </button>
+                        </div>
+                   </div>
+
+                        {% if errors|length > 0 %}
+                            <hr />
+                            <div class="alert alert-danger" role="alert">
+                                {{ errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                        {% if right_panel %}
+                            <div class="col-auto offset-md-1 p-2 text-center">
+                            {% if text_login|length > 0 %}
+                                <div class="rich_text_container">
+                                    {{ text_login|safe_html }}
+                                </div>
+                            {% endif %}
+
+                            {% if config('use_public_faq') %}
+                                <hr />
+
+                                <a class="btn btn-outline-secondary btn-icon" href="front/helpdesk.faq.php">
+                                    <i class="fas fa-question"></i>&nbsp;
+                                    {{ __('FAQ') }}
+                                </a>
+                            {% endif %}
+
+                            <hr />
+
+                            {{ call_plugin_hook(constant('Glpi\\Plugin\\Hooks::DISPLAY_LOGIN')) }}
+                            </div>
+                        {% endif %}
+                    </div>
+            </form>
+         </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block javascript_block %}
+<script type="text/javascript">
+   $(function () {
+$('#login_name').focus();
+});
+</script>
+{% endblock %}
